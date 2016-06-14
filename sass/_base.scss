@@ -1,0 +1,11 @@
+body {
+  background: lightblue;
+
+  @include breakpoint(1170) {
+    background: blue;
+  }
+
+  .sidebar {
+    @include span(3 of 12);
+  }
+}

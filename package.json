@@ -1,0 +1,32 @@
+{
+  "name": "elnorte",
+  "version": "1.0.0",
+  "description": "sample package builder",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "sassitup": "node-sass --source-map true --include-path sass sass/styles.scss css/styles.css",
+    "prefixit": "postcss --use autoprefixer  --autoprefixer.browsers 'last 5 versions, iOS 8' --replace css/styles.css",
+    "squishcss": "minify --output production/styles.min.css css/styles.css",
+    "squishjs": "minify --output production/scripts.min.js js/scripts.js",
+    "obeymejs": "jshint js/*",
+    "obeymecss": "sass-lint --config .sass-lint.yml 'sass/*.scss' --verbose --no-exit",
+    "taadaa": "watch 'npm run sassitup && npm run prefixit && npm run squishcss && npm run squishjs && npm run obeymecss' sass js",
+    "reload": "live-reload --port 9091 production/",
+    "makesvg": "svg-sprite-generate -d svg -o svg/sprite.svg"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "breakpoint-sass": "^2.7.0",
+    "jshint": "^2.9.2",
+    "minifier": "^0.7.1",
+    "node-sass": "^3.7.0",
+    "postcss-cli": "^2.5.2",
+    "sass-lint": "^1.7.0",
+    "susy": "^2.2.12",
+    "svg": "^0.1.0",
+    "svg-sprite-generator": "0.0.7",
+    "watch": "^0.18.0"
+  }
+}
